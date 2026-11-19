@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<title>TikTok sign-in | Gizmoddity</title>
+<meta name="theme-color" content="#141420">
+<link rel="icon" href="logo.png">
+<style>
+  :root { --bg:#141420; --card:#1e1e2e; --line:#2e2e44; --text:#f4f4f6; --muted:#a6a6ba; --lime:#c6ff00; --bad:#ff6b6b; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text);
+         font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:620px; margin:0 auto; padding:32px 16px 48px; text-align:center; }
+  img { width:72px; height:72px; border-radius:50%; border:3px solid var(--lime); }
+  h1 { font-size:24px; margin:10px 0 6px; }
+  p { color:var(--muted); margin:0 0 18px; }
+  .box { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px; text-align:left; margin:0 0 14px; }
+  label { display:block; font-size:13px; color:var(--muted); margin:0 0 6px; text-transform:uppercase; letter-spacing:.5px; }
+  textarea { width:100%; min-height:110px; resize:vertical; background:var(--bg); color:var(--lime); border:1px solid var(--line);
+             border-radius:10px; padding:12px; font:14px/1.4 ui-monospace,Consolas,monospace; word-break:break-all; }
+  button { width:100%; margin-top:10px; background:var(--lime); color:var(--bg); border:0; border-radius:12px;
+           padding:14px; font-weight:800; font-size:16px; cursor:pointer; }
+  .err { border-color:var(--bad); }
+  .err strong { color:var(--bad); }
+  .hidden { display:none; }
+  .muted { font-size:13px; }
+</style>
+</head>
+<body>
+<main>
+  <img src="logo.png" alt="Gizmoddity logo">
+  <h1 id="title">TikTok sign-in</h1>
+  <p id="lead">Copy this code and give it to the team.</p>
+
+  <div class="box hidden" id="okbox">
+    <label for="out">Code to send</label>
+    <textarea id="out" readonly></textarea>
+    <button id="copy" type="button">Copy</button>
+  </div>
+
+  <div class="box err hidden" id="errbox">
+    <strong>TikTok didn't send a code.</strong>
+    <p id="errtext" style="margin:6px 0 0"></p>
+  </div>
+
+  <p class="muted">The code works only once and expires after a few minutes, so send it straight away.
+  Nothing is stored on this page.</p>
+  <p class="muted"><a href="./" style="color:var(--lime)">Gizmoddity</a> &middot;
+    <a href="privacy.html" style="color:var(--lime)">Privacy</a> &middot;
+    <a href="terms.html" style="color:var(--lime)">Terms</a></p>
+</main>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  var code = q.get("code"), state = q.get("state");
+  var error = q.get("error"), desc = q.get("error_description");
+  if (code) {
+    var text = "code: " + code + (state ? "\nstate: " + state : "");
+    var out = document.getElementById("out");
+    out.value = text;
+    document.getElementById("okbox").classList.remove("hidden");
+    document.getElementById("copy").addEventListener("click", function () {
+      var btn = this;
+      function done() { btn.textContent = "Copied!"; setTimeout(function () { btn.textContent = "Copy"; }, 2000); }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () { out.select(); document.execCommand("copy"); done(); });
+      } else { out.select(); document.execCommand("copy"); done(); }
+    });
+    // keep the code out of the browser history
+    if (history.replaceState) history.replaceState(null, "", location.pathname);
+  } else {
+    document.getElementById("lead").textContent = "Please send this message to the team.";
+    document.getElementById("errtext").textContent =
+      error ? (error + (desc ? ": " + desc : "")) : "Open the TikTok sign-in link again from the team's instructions.";
+    document.getElementById("errbox").classList.remove("hidden");
+  }
+})();
+</script>
+</body>
+</html>
