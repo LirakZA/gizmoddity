@@ -5,45 +5,128 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gizmoddity: the gadgets from the videos</title>
 <meta name="description" content="Every clever gadget from the Gizmoddity Shorts, newest first.">
+<meta name="theme-color" content="#141420">
 <link rel="icon" href="logo.png">
 <style>
-  :root { --bg:#12121c; --card:#1d1d2b; --text:#f4f4f6; --muted:#a0a0b2; --accent:#c6ff00; }
+  :root { --bg:#141420; --card:#1e1e2e; --line:#2e2e44; --text:#f4f4f6; --muted:#a6a6ba; --lime:#c6ff00; }
   * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
   body { margin:0; background:var(--bg); color:var(--text);
-         font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
-  main { max-width:520px; margin:0 auto; padding:32px 16px 48px; text-align:center; }
-  img.logo { width:96px; height:96px; border-radius:50%; }
-  h1 { font-size:24px; margin:12px 0 4px; }
-  p.tag { color:var(--muted); margin:0 0 24px; }
-  a.item { display:flex; align-items:center; justify-content:space-between; gap:12px;
-           background:var(--card); color:var(--text); text-decoration:none; padding:16px 18px;
-           border-radius:14px; margin:0 0 12px; border:1px solid #2c2c3e; text-align:left; }
-  a.item:hover, a.item:focus { border-color:var(--accent); outline:none; }
-  a.item .go { color:var(--accent); font-weight:700; white-space:nowrap; }
-  a.item .new { background:var(--accent); color:#12121c; font-size:12px; font-weight:700;
-                padding:2px 8px; border-radius:99px; margin-left:8px; }
-  a.yt { color:var(--accent); }
-  footer { color:var(--muted); font-size:13px; margin-top:28px; }
+         font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  header { max-width:960px; margin:0 auto; padding:28px 16px 8px; text-align:center; }
+  header img { width:88px; height:88px; border-radius:50%; border:3px solid var(--lime); }
+  h1 { font-size:26px; margin:10px 0 4px; letter-spacing:.3px; }
+  header p { color:var(--muted); margin:0 auto; max-width:420px; }
+  .hint { display:inline-block; margin-top:14px; font-size:14px; color:var(--bg); background:var(--lime);
+          padding:4px 12px; border-radius:99px; font-weight:700; }
+  main { max-width:1200px; margin:0 auto; padding:16px; display:grid; gap:16px;
+         grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr)); }
+  .tile { background:var(--card); border:1px solid var(--line); border-radius:18px; overflow:hidden;
+          display:flex; flex-direction:column; scroll-margin-top:12px; }
+  .tile:target { border-color:var(--lime); box-shadow:0 0 0 2px var(--lime); }
+  .pic { position:relative; aspect-ratio:4/3; background:#fff; }
+  .pic::before { content:attr(data-icon); position:absolute; inset:0; display:grid; place-items:center;
+                 font-size:72px; background:#24243a; }
+  .pic img { position:relative; width:100%; height:100%; object-fit:contain; display:block; background:#fff; }
+  .num, .new { position:absolute; top:10px; font-weight:800; border-radius:99px; padding:3px 11px; font-size:15px; }
+  .num { left:10px; background:var(--bg); color:var(--lime); }
+  .new { right:10px; background:var(--lime); color:var(--bg); font-size:13px; }
+  .body { padding:14px 16px 16px; display:flex; flex-direction:column; flex:1; }
+  h2 { font-size:19px; margin:0 0 6px; line-height:1.25; }
+  .body p { color:var(--muted); margin:0 0 14px; font-size:15px; flex:1; }
+  .btn { display:block; text-align:center; background:var(--lime); color:var(--bg); font-weight:800;
+         text-decoration:none; padding:13px 14px; border-radius:12px; font-size:16px; }
+  .btn + .btn { margin-top:8px; }
+  .btn.alt { background:transparent; color:var(--lime); border:2px solid var(--lime); }
+  .btn:hover, .btn:focus-visible { filter:brightness(1.08); outline:2px solid var(--text); outline-offset:2px; }
+  footer { max-width:620px; margin:0 auto; padding:12px 16px 40px; text-align:center; color:var(--muted); font-size:13px; }
+  footer a { color:var(--lime); font-size:15px; font-weight:700; }
 </style>
 </head>
 <body>
-<main>
-  <img class="logo" src="logo.png" alt="Gizmoddity logo">
+<header>
+  <img src="logo.png" alt="Gizmoddity Odd Bot logo" width="88" height="88">
   <h1>Gizmoddity</h1>
-  <p class="tag">Weird little things that are oddly genius. Here's every gadget from the videos, newest first.</p>
-  <a class="item" href="https://s.click.aliexpress.com/e/_c4qUkkCD" rel="sponsored noopener" target="_blank"><span>Window track cleaning brush<span class=new>NEW</span></span><span class="go">Get it &rarr;</span></a>
-  <a class="item" href="https://s.click.aliexpress.com/e/_c33BFJWD" rel="sponsored noopener" target="_blank"><span>Motion-sensor cupboard lights</span><span class="go">Get it &rarr;</span></a>
-  <a class="item" href="https://s.click.aliexpress.com/e/_c3082sPR" rel="sponsored noopener" target="_blank"><span>Car seat gap filler</span><span class="go">Get it &rarr;</span></a>
-  <a class="item" href="https://s.click.aliexpress.com/e/_c3FJg0a9" rel="sponsored noopener" target="_blank"><span>Mini bag heat sealer</span><span class="go">Get it &rarr;</span></a>
-  <a class="item" href="https://s.click.aliexpress.com/e/_c4KBspy9" rel="sponsored noopener" target="_blank"><span>Clip-on pot strainer</span><span class="go">Get it &rarr;</span></a>
-  <a class="item" href="https://s.click.aliexpress.com/e/_c4o56QBR" rel="sponsored noopener" target="_blank"><span>Magnetic wristband for screws</span><span class="go">Get it &rarr;</span></a>
-  <a class="item" href="https://s.click.aliexpress.com/e/_c3cFh60t" rel="sponsored noopener" target="_blank"><span>Universal socket grip</span><span class="go">Get it &rarr;</span></a>
-  <p><a class="yt" href="https://www.youtube.com/@gizmoddity">Watch the Shorts on YouTube</a></p>
-  <footer>
-    These are affiliate links: if you buy, I may earn a small commission at no extra cost to you.
-    As an Amazon Associate I earn from qualifying purchases. Prices and stock can change on the store.
-    <br>Updated 2026-11-19.
-  </footer>
+  <p>Weird little things that are oddly genius. Every gadget from the videos, newest first.</p>
+  <span class="hint">Find the number from the video</span>
+</header>
+<main>
+  <article class="tile" id="p7">
+    <div class="pic" data-icon="🧹"><img src="https://ae-pic-a1.aliexpress-media.com/kf/Sec51e640ebe64d57b3226e108ebc998eH.jpg" alt="Window track cleaning brush" loading="eager" referrerpolicy="no-referrer" onerror="this.remove()">
+      <span class="num">#7</span><span class="new">NEW</span>
+    </div>
+    <div class="body">
+      <h2>Window track cleaning brush</h2>
+      <p>A window and door track cleaning brush shaped to reach into sliding door grooves and pull out years of dirt in two minutes.</p>
+      <a class="btn" href="https://s.click.aliexpress.com/e/_c4qUkkCD" rel="sponsored noopener" target="_blank">Get it on AliExpress &rarr;</a>
+    </div>
+  </article>
+  <article class="tile" id="p6">
+    <div class="pic" data-icon="💡"><img src="https://ae-pic-a1.aliexpress-media.com/kf/Sa8110d3ab1dc4d1d854f3022697a31a9H.png" alt="Motion-sensor cupboard lights" loading="eager" referrerpolicy="no-referrer" onerror="this.remove()">
+      <span class="num">#6</span>
+    </div>
+    <div class="body">
+      <h2>Motion-sensor cupboard lights</h2>
+      <p>Rechargeable motion-sensor LED strips that stick inside cupboards, wardrobes and stairs and light up when you open the door. No wiring.</p>
+      <a class="btn" href="https://s.click.aliexpress.com/e/_c33BFJWD" rel="sponsored noopener" target="_blank">Get it on AliExpress &rarr;</a>
+    </div>
+  </article>
+  <article class="tile" id="p5">
+    <div class="pic" data-icon="🚗"><img src="https://ae-pic-a1.aliexpress-media.com/kf/S8f7a1ad035234371996615398effaa06f.jpg" alt="Car seat gap filler" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+      <span class="num">#5</span>
+    </div>
+    <div class="body">
+      <h2>Car seat gap filler</h2>
+      <p>A car seat gap filler that plugs the space between seat and console, so phones, keys and fries stop disappearing.</p>
+      <a class="btn" href="https://s.click.aliexpress.com/e/_c3082sPR" rel="sponsored noopener" target="_blank">Get it on AliExpress &rarr;</a>
+    </div>
+  </article>
+  <article class="tile" id="p4">
+    <div class="pic" data-icon="🥔"><img src="https://ae-pic-a1.aliexpress-media.com/kf/S85f43646e78c42f1b4ef639eede3b6fak.jpg" alt="Mini bag heat sealer" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+      <span class="num">#4</span>
+    </div>
+    <div class="body">
+      <h2>Mini bag heat sealer</h2>
+      <p>A mini handheld heat sealer: run it along any chip or snack bag and it seals shut like new. Smaller than a stapler.</p>
+      <a class="btn" href="https://s.click.aliexpress.com/e/_c3FJg0a9" rel="sponsored noopener" target="_blank">Get it on AliExpress &rarr;</a>
+    </div>
+  </article>
+  <article class="tile" id="p3">
+    <div class="pic" data-icon="🍝"><img src="https://ae-pic-a1.aliexpress-media.com/kf/S4008d1d498ef437f8ffaadf4121d7500l.png" alt="Clip-on pot strainer" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+      <span class="num">#3</span>
+    </div>
+    <div class="body">
+      <h2>Clip-on pot strainer</h2>
+      <p>A silicone clip-on strainer that snaps onto any pot so you can drain pasta and veggies without a bulky colander.</p>
+      <a class="btn" href="https://s.click.aliexpress.com/e/_c4KBspy9" rel="sponsored noopener" target="_blank">Get it on AliExpress &rarr;</a>
+    </div>
+  </article>
+  <article class="tile" id="p2">
+    <div class="pic" data-icon="🧲"><img src="https://ae-pic-a1.aliexpress-media.com/kf/S87fa2d40f85a429090bfe697384cb77aZ.jpg" alt="Magnetic wristband for screws" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+      <span class="num">#2</span>
+    </div>
+    <div class="body">
+      <h2>Magnetic wristband for screws</h2>
+      <p>A magnetic wristband that holds screws, nails and drill bits on your wrist while you work. No more crawling under the cupboard.</p>
+      <a class="btn" href="https://s.click.aliexpress.com/e/_c4o56QBR" rel="sponsored noopener" target="_blank">Get it on AliExpress &rarr;</a>
+    </div>
+  </article>
+  <article class="tile" id="p1">
+    <div class="pic" data-icon="🔧"><img src="https://ae-pic-a1.aliexpress-media.com/kf/Sfcedf994fbf248f79e9898bb7afddb40Y.jpg" alt="Universal socket grip" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
+      <span class="num">#1</span>
+    </div>
+    <div class="body">
+      <h2>Universal socket grip</h2>
+      <p>The universal socket grip: hundreds of spring-loaded steel pins grab almost any nut, bolt, hook or wing nut. Fits a drill or socket wrench.</p>
+      <a class="btn" href="https://s.click.aliexpress.com/e/_c3cFh60t" rel="sponsored noopener" target="_blank">Get it on AliExpress &rarr;</a>
+    </div>
+  </article>
 </main>
+<footer>
+  <p><a href="https://www.youtube.com/@gizmoddity">Watch the Shorts on YouTube</a></p>
+  <p>These are affiliate links: if you buy, I may earn a small commission at no extra cost to you.
+  As an Amazon Associate I earn from qualifying purchases. Prices and stock can change on the store.
+  No cookies or tracking on this page.<br>Updated 2026-11-19.</p>
+</footer>
 </body>
 </html>
