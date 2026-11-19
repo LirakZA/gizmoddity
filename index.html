@@ -28,9 +28,8 @@
   .pic::before { content:attr(data-icon); position:absolute; inset:0; display:grid; place-items:center;
                  font-size:72px; background:#24243a; }
   .pic img { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; padding:8px; display:block; background:#fff; }
-  .num, .new { position:absolute; top:10px; font-weight:800; border-radius:99px; padding:3px 11px; font-size:15px; }
-  .num { left:10px; background:var(--bg); color:var(--lime); }
-  .new { right:10px; background:var(--lime); color:var(--bg); font-size:13px; }
+  .new { position:absolute; top:10px; left:10px; font-weight:800; border-radius:99px; padding:3px 11px;
+          background:var(--lime); color:var(--bg); font-size:13px; }
   .body { padding:14px 16px 16px; display:flex; flex-direction:column; flex:1; }
   h2 { font-size:19px; margin:0 0 6px; line-height:1.25; }
   .body p { color:var(--muted); margin:0 0 14px; font-size:15px; flex:1; }
@@ -48,12 +47,12 @@
   <img src="logo.png" alt="Gizmoddity Odd Bot logo" width="88" height="88">
   <h1>Gizmoddity</h1>
   <p>Weird little things that are oddly genius. Every gadget from the videos, newest first.</p>
-  <span class="hint">Find the number from the video</span>
+  <span class="hint">Tap a gadget to see it on the store</span>
 </header>
 <main>
   <article class="tile" id="p7">
     <div class="pic" data-icon="🧹"><img src="https://ae-pic-a1.aliexpress-media.com/kf/Sec51e640ebe64d57b3226e108ebc998eH.jpg" alt="Window track cleaning brush" loading="eager" referrerpolicy="no-referrer" onerror="this.remove()">
-      <span class="num">#7</span><span class="new">NEW</span>
+      <span class="new">NEW</span>
     </div>
     <div class="body">
       <h2>Window track cleaning brush</h2>
@@ -63,7 +62,7 @@
   </article>
   <article class="tile" id="p6">
     <div class="pic" data-icon="💡"><img src="https://ae-pic-a1.aliexpress-media.com/kf/Sa8110d3ab1dc4d1d854f3022697a31a9H.png" alt="Motion-sensor cupboard lights" loading="eager" referrerpolicy="no-referrer" onerror="this.remove()">
-      <span class="num">#6</span>
+      
     </div>
     <div class="body">
       <h2>Motion-sensor cupboard lights</h2>
@@ -73,7 +72,7 @@
   </article>
   <article class="tile" id="p5">
     <div class="pic" data-icon="🚗"><img src="https://ae-pic-a1.aliexpress-media.com/kf/S8f7a1ad035234371996615398effaa06f.jpg" alt="Car seat gap filler" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
-      <span class="num">#5</span>
+      
     </div>
     <div class="body">
       <h2>Car seat gap filler</h2>
@@ -83,7 +82,7 @@
   </article>
   <article class="tile" id="p4">
     <div class="pic" data-icon="🥔"><img src="https://ae-pic-a1.aliexpress-media.com/kf/S85f43646e78c42f1b4ef639eede3b6fak.jpg" alt="Mini bag heat sealer" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
-      <span class="num">#4</span>
+      
     </div>
     <div class="body">
       <h2>Mini bag heat sealer</h2>
@@ -93,7 +92,7 @@
   </article>
   <article class="tile" id="p3">
     <div class="pic" data-icon="🍝"><img src="https://ae-pic-a1.aliexpress-media.com/kf/S4008d1d498ef437f8ffaadf4121d7500l.png" alt="Clip-on pot strainer" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
-      <span class="num">#3</span>
+      
     </div>
     <div class="body">
       <h2>Clip-on pot strainer</h2>
@@ -103,7 +102,7 @@
   </article>
   <article class="tile" id="p2">
     <div class="pic" data-icon="🧲"><img src="https://ae-pic-a1.aliexpress-media.com/kf/S87fa2d40f85a429090bfe697384cb77aZ.jpg" alt="Magnetic wristband for screws" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
-      <span class="num">#2</span>
+      
     </div>
     <div class="body">
       <h2>Magnetic wristband for screws</h2>
@@ -113,7 +112,7 @@
   </article>
   <article class="tile" id="p1">
     <div class="pic" data-icon="🔧"><img src="https://ae-pic-a1.aliexpress-media.com/kf/Sfcedf994fbf248f79e9898bb7afddb40Y.jpg" alt="Universal socket grip" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">
-      <span class="num">#1</span>
+      
     </div>
     <div class="body">
       <h2>Universal socket grip</h2>
